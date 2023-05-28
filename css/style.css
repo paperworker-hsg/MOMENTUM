@@ -1,3 +1,52 @@
+body {
+  text-align: center;
+  color: whitesmoke;
+}
+
 .hidden {
-    display:  none;
+  display: none;
+}
+
+input {
+  color: white;
+}
+
+li span {
+  margin-right: 30px;
+}
+
+.collapsible {
+  color: black;
+  background-color: lightgoldenrodyellow;
+}
+
+#login-form {
+  margin-top: 5rem;
+}
+
+#clock {
+  margin-top: 5rem;
+  font-size: 13rem;
+}
+
+#greeting {
+  font-size: 4rem;
+}
+
+#quote {
+  font-size: 2rem;
+  margin-block: 3rem;
+}
+
+#weather {
+  margin-top: 3rem;
+  font-size: 2rem;
+}
+
+#loginBtn {
+  margin-top: 25px;
+}
+
+#todo-list {
+  font-size: 1.5rem;
 }

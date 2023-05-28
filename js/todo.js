@@ -19,11 +19,15 @@ function deleteToDo(event) {
 
 function paintToDo(newTodo) {
   const li = document.createElement("li");
+  const divHeader = document.createElement("div");
+  divHeader.classList.add("collapsible-header");
+  divHeader.textContent = "To Do List";
+  0;
   li.id = newTodo.id;
   const span = document.createElement("span");
-  span.innerText = newTodo.text;
+  span.innerHTML = `${newTodo.text} `;
   const button = document.createElement("button");
-  button.innerHTML = `<i class='material-icons delete'>delete</i>`;
+  button.innerHTML = `<i class='tiny material-icons delete'>delete</i>`;
   button.addEventListener("click", deleteToDo);
   li.appendChild(span);
   li.appendChild(button);
@@ -53,6 +57,9 @@ if (savedToDos !== null) {
 }
 
 document.addEventListener("DOMContentLoaded", function () {
-  var elems = document.querySelectorAll(".collapsible");
-  var instances = M.Collapsible.init(elems, options);
+  const elems = document.querySelectorAll(".collapsible");
+
+  const instances = M.Collapsible.init(elems, {
+    onOpenStart: function (el) {},
+  });
 });

@@ -11,7 +11,7 @@ function saveToDos() {
 }
 
 function deleteToDo(event) {
-  const li = event.target.parentElement;
+  const li = event.currentTarget.parentElement;
   li.remove();
   toDos = toDos.filter((toDo) => toDo.id !== parseInt(li.id));
   saveToDos();
@@ -23,7 +23,7 @@ function paintToDo(newTodo) {
   const span = document.createElement("span");
   span.innerText = newTodo.text;
   const button = document.createElement("button");
-  button.innerText = "❌";
+  button.innerHTML = `<i class='material-icons delete'>delete</i>`;
   button.addEventListener("click", deleteToDo);
   li.appendChild(span);
   li.appendChild(button);
@@ -51,3 +51,8 @@ if (savedToDos !== null) {
   toDos = parsedToDos;
   parsedToDos.forEach(paintToDo);
 }
+
+document.addEventListener("DOMContentLoaded", function () {
+  var elems = document.querySelectorAll(".collapsible");
+  var instances = M.Collapsible.init(elems, options);
+});
